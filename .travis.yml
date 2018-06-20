@@ -25,6 +25,3 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Variable set travis sided
   keep-history: true
-  on:
-    # tags: true
-    branch: master
