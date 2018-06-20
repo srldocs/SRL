@@ -1,0 +1,9 @@
+
+RSClient
+==========
+Adds addinal utilities for managing the RS client, like loosing focus, starting it, stopping it, and so on.
+
+Only works on Windows.
+
+
+------------
