@@ -1,0 +1,30 @@
+language: generic
+sudo: required
+dist: trusty
+
+os:
+  - linux
+
+script:
+  - git clone "https://github.com/SRL/SRL"
+  - cd SRL/docgen/
+  - python docgen.py ../
+  - make html
+
+install:
+  - sudo apt-get update
+  - sudo apt-get install git
+  - sudo apt install python2.7 python-pip
+  - sudo pip install sphinx
+  - sudo pip install sphinx_rtd_theme
+  
+# travis args
+deploy:
+  provider: pages
+  local-dir: SRL/docgen/build/html/ # Files in this directory will be uploaded to `gh-pages` branch
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Variable set travis sided
+  keep-history: true
+  on:
+    tags: true
+    branch: master
