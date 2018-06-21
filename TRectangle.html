@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#trectangle-radius">TRectangle.Radius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trectangle-maxradius">TRectangle.MaxRadius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trectangle-mean">TRectangle.Mean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trectangle-fixorder">TRectangle.FixOrder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trectangle-rotate">TRectangle.Rotate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trectangle-contains">TRectangle.Contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trectangle-dirbylen">TRectangle.DirByLen</a></li>
@@ -235,6 +236,7 @@
 <h1>TRectangle<a class="headerlink" href="#trectangle" title="Permalink to this headline">¶</a></h1>
 <p>TRectangle related methods</p>
 <p>Type definition is found in shared/globals.simba</p>
+<p>The rectangle is defined in clockwise order, from <code class="docutils literal notranslate"><span class="pre">Top</span></code> to <code class="docutils literal notranslate"><span class="pre">Left</span></code></p>
 <hr class="docutils" />
 <div class="section" id="trectangle-totpa">
 <h2>TRectangle.ToTPA<a class="headerlink" href="#trectangle-totpa" title="Permalink to this headline">¶</a></h2>
@@ -278,6 +280,15 @@
 <p class="first admonition-title">Note</p>
 <p class="last">by slacky</p>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="trectangle-fixorder">
+<h2>TRectangle.FixOrder<a class="headerlink" href="#trectangle-fixorder" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRectangle</span><span class="o">.</span><span class="nf">FixOrder</span><span class="p">()</span><span class="o">:</span> <span class="n">TRectangle</span><span class="o">;</span> <span class="n">constref</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>As long as the order of the points are clockwise, this will shift the points so that
+<code class="docutils literal notranslate"><span class="pre">Top</span></code>, is the topmost,``Right`` is the right-most etc…</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="trectangle-rotate">
@@ -326,7 +337,7 @@
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRectangle</span><span class="o">.</span><span class="nf">OffsetFunc</span><span class="p">(</span><span class="n">pt</span><span class="o">:</span> <span class="n">TPoint</span><span class="p">)</span><span class="o">:</span> <span class="n">TRectangle</span><span class="o">;</span> <span class="n">constref</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Offset the rectangle</p>
+<p>Offset the rectangle, named <code class="docutils literal notranslate"><span class="pre">OffsetFunc</span></code> to match it’s brother <code class="docutils literal notranslate"><span class="pre">TBox</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="trectangle-filter">
@@ -335,10 +346,6 @@
 </pre></div>
 </div>
 <p>Extract all the points from <cite>TestSet</cite> that fits within this rectangle.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">by slacky</p>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="trectangle-expand">
@@ -347,10 +354,6 @@
 </pre></div>
 </div>
 <p>Increase or decrease the dimensions of the rectangle.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">by slacky</p>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="trectangle-nearestedge">
@@ -359,10 +362,6 @@
 </pre></div>
 </div>
 <p>Returns the closest edge point (think Rect.ToTPA.Connect) to the TPoint <cite>P</cite>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">by slacky</p>
-</div>
 <hr class="docutils" />
 </div>
 </div>
