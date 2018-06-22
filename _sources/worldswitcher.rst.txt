@@ -1,7 +1,7 @@
 
 WorldSwitcher
 =============
-Methods that relates to swithing world.
+Methods that relates to swithing world. Olly will one day document this some day.
 
 
 ------------

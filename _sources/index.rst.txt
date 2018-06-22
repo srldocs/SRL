@@ -9,6 +9,7 @@ Welcome to SRLs documentation!
    drawing
    wrappers
    mouse
+   interfacebase
    math
    pixelshift
    random
@@ -47,7 +48,8 @@ Welcome to SRLs documentation!
    MM2MS
    login
    chooseoption
-   players(osr)
+   players
+   client
    antiban
 
 -----------

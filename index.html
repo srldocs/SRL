@@ -84,6 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="drawing.html">Drawing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wrappers.html">Wrappers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfacebase.html">InterfaceBase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pixelshift.html">Pixelshift</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random.html">Random</a></li>
@@ -116,7 +117,8 @@
 <li class="toctree-l1"><a class="reference internal" href="MM2MS.html">Minimap to Mainscreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="login.html">Loginscreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chooseoption.html">ChooseOption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="players(osr).html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="antiban.html">Antiban</a></li>
 </ul>
 <p class="caption"><span class="caption-text">OSR -&gt; INTERFACES -&gt; GAMETABS</span></p>
@@ -133,7 +135,7 @@
 <p class="caption"><span class="caption-text">OSR -&gt; INTERFACES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minimap.html">BankScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="grandexch.html">GrandExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shops.html">Shop Interface</a></li>
@@ -221,10 +223,14 @@
 <p class="caption"><span class="caption-text">SHARED</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="text.html">Text (shared)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#srl-findtext">srl.FindText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#srl-mousetext">srl.MouseText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#id1">srl.MouseText</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text.html#srl-formatnumber">SRL.FormatNumber</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="color.html">Color</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="color.html#cts0-cts1-cts2">CTS0, CTS1, CTS2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="color.html#srl-findcolors">srl.FindColors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="color.html#srl-waitcolorcount">srl.WaitColorCount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="color.html#srl-waitcolor">srl.WaitColor</a></li>
@@ -310,6 +316,17 @@
 <li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mouse.html#moving-the-mouse">Moving the mouse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mouse.html#clicking-the-mouse">Clicking the mouse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interfacebase.html">InterfaceBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase">TInterfaceBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-setname">TInterfaceBase.SetName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-getname">TInterfaceBase.GetName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-setstatic">TInterfaceBase.SetStatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-getstatic">TInterfaceBase.GetStatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-setbounds">TInterfaceBase.SetBounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-getbounds">TInterfaceBase.GetBounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfacebase.html#tinterfacebase-getmiddle">TInterfaceBase.GetMiddle</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">Math</a><ul>
@@ -480,6 +497,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="text(osr).html">Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpbar.html">XPBar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xpbar.html#xpbar-isopen">XPBar.IsOpen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xpbar.html#xpbar-toggle">XPBar.Toggle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xpbar.html#xpbar-read">XPBar.Read</a></li>
 </ul>
 </li>
@@ -547,18 +566,25 @@
 <li class="toctree-l2"><a class="reference internal" href="chooseoption.html#chooseoption-close">ChooseOption.Close</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="players(osr).html">Players</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-setcount">TPlayerArray.SetCount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-getcount">TPlayerArray.GetCount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-getcurrent">TPlayerArray.GetCurrent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-setcurrent">TPlayerArray.SetCurrent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-getactive">TPlayerArray.GetActive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-getplayer">TPlayerArray.GetPlayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-switchto">TPlayerArray.SwitchTo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-next">TPlayerArray.Next</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-add">TPlayerArray.Add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-new">TPlayerArray.New</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players(osr).html#tplayerarray-logincurrent">TPlayerArray.LoginCurrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-setcount">TPlayerArray.SetCount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-getcount">TPlayerArray.GetCount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-getcurrent">TPlayerArray.GetCurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-setcurrent">TPlayerArray.SetCurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-getactive">TPlayerArray.GetActive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-getplayer">TPlayerArray.GetPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-switchto">TPlayerArray.SwitchTo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-next">TPlayerArray.Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-add">TPlayerArray.Add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-new">TPlayerArray.New</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#tplayerarray-logincurrent">TPlayerArray.LoginCurrent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html#srl-isloggedin">srl.IsLoggedIn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#srl-isclientloading">srl.isClientLoading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#id1">srl.isClientLoading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#srl-isclientready">srl.isClientReady</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="antiban.html">Antiban</a></li>
@@ -705,7 +731,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mainscreen.html#mainscreen-findhpbars">MainScreen.FindHPBars</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="minimap.html">BankScreen</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getmiddle">Minimap.GetMiddle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getprayerlevel">Minimap.GetPrayerLevel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-gethplevel">Minimap.GetHPLevel</a></li>

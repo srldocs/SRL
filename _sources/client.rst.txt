@@ -1,0 +1,53 @@
+
+client
+======
+Refers to the oldschool runescape client. Stores somewhat misc methods that relates to client checks.
+
+
+------------
+
+srl.IsLoggedIn
+~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.isLoggedIn(WaitTime: Int32 = 0): Boolean; overload;
+
+Returns ``True`` if your character is logged in.
+ By default it doesn't wait, but you can change ``WaitTime`` to whatever.
+
+
+------------
+
+srl.isClientLoading
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.isClientLoading(WaitTime: Int32 = 0): Boolean;
+
+Returns ``True`` if we are still waiting for the client to boot up.
+
+
+------------
+
+srl.isClientLoading
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.WaitClientLoading: Boolean;
+
+Waits forever, or until the client has successfully booted.
+
+
+------------
+
+srl.isClientReady
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.isClientReady(WaitTime: Int32 = 0): Boolean; overload;
+
+Returns ``True`` if the client is ready to be used. 
+If the client isn't ready it will wait, expecting it to get ready.
+
+
+------------

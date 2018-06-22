@@ -6,6 +6,20 @@ Color finding related methods
 
 ------------
 
+CTS0, CTS1, CTS2
+~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+
+  function CTS0(Color, Tolerance: Int32): TCTSColor;
+  function CTS1(Color, Tolerance: Int32): TCTS1Color;
+  function CTS2(Color, Tolerance: Int32; HueMod:Extended=0.2; SatMod:Extended=0.2): TCTS2Color;
+  
+Used for declaring colors using the different CTS settings.
+
+
+------------
+
 srl.FindColors
 ~~~~~~~~~~~~~~~
 .. code-block:: pascal
