@@ -427,6 +427,7 @@
 <li class="toctree-l1"><a class="reference internal" href="TPoint.html">TPoint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TBox.html">TBox</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="TBox.html#tbox-nearestedge">TBox.NearestEdge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TBox.html#tbox-intersect">TBox.Intersect</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="TRectangle.html">TRectangle</a><ul>
@@ -732,26 +733,44 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getmiddle">Minimap.GetMiddle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getprayerlevel">Minimap.GetPrayerLevel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-gethplevel">Minimap.GetHPLevel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-gethppercent">Minimap.GetHPPercent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getspecialattack">Minimap.GetSpecialAttack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-ispoisoned">Minimap.IsPoisoned</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-curepoison">Minimap.CurePoison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getrunenergy">Minimap.GetRunEnergy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-isprayerenabled">Minimap.isPrayerEnabled</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-isrunenabled">Minimap.isRunEnabled</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-toggleprayer">Minimap.TogglePrayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-togglerun">Minimap.ToggleRun</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-isplayermoving">Minimap.isPlayerMoving</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-findflag">Minimap.FindFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-isflagpresent">Minimap.isFlagPresent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-waitflag">Minimap.WaitFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-waitplayermoving">Minimap.WaitPlayerMoving</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-waitflagex">Minimap.WaitFlagEx</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-getcompassangle">Minimap.GetCompassAngle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimap.html#minimap-mousesetcompassangle">Minimap.MouseSetCompassAngle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minimap.html#types-and-vars">Types and Vars</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#eminimaporb">EMinimapOrb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#eminimapdottype">EMinimapDotType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#trsminimap">TRSMinimap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#id1">Minimap</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="minimap.html#methods">Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getmiddle">Minimap.GetMiddle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getprayerlevel">Minimap.GetPrayerLevel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-gethplevel">Minimap.GetHPLevel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-gethppercent">Minimap.GetHPPercent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getspecialattack">Minimap.GetSpecialAttack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-ispoisoned">Minimap.IsPoisoned</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-curepoison">Minimap.CurePoison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getrunenergy">Minimap.GetRunEnergy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-isprayerenabled">Minimap.isPrayerEnabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-isrunenabled">Minimap.isRunEnabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-toggleprayer">Minimap.TogglePrayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-togglerun">Minimap.ToggleRun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-isplayermoving">Minimap.isPlayerMoving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-findflag">Minimap.FindFlag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-isflagpresent">Minimap.isFlagPresent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-waitflag">Minimap.WaitFlag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-waitplayermoving">Minimap.WaitPlayerMoving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-waitflagex">Minimap.WaitFlagEx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getcompassangle">Minimap.GetCompassAngle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-setcompassangle-mouse">Minimap.SetCompassAngle_Mouse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-setcompassangle">Minimap.SetCompassAngle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-clickcompass">Minimap.ClickCompass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getdots">Minimap.GetDots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-finddots">Minimap.FindDots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-ispointon">Minimap.isPointOn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-filterpoints">Minimap.FilterPoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-getcolorpercent">Minimap.GetColorPercent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="minimap.html#minimap-randomcompass">Minimap.RandomCompass</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="grandexch.html">GrandExchange</a><ul>

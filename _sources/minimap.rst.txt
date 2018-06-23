@@ -5,6 +5,69 @@ Minimap
 
 ------------
 
+Types and Vars
+---------------
+
+
+------------
+
+EMinimapOrb
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ type EMinimapOrb = (MMOrbHP, MMOrbPrayer, MMOrbRun, MMOrbSpecialAttack);
+
+The orbs around the minimap. Used when getting values from the orbs, or to toggle them.
+
+
+------------
+
+EMinimapDotType
+~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ type EMinimapDotType = (MMDotPlayer, MMDotItem, MMDotNPC);
+
+The differnet supported minimap dot types.
+
+
+------------
+
+TRSMinimap
+~~~~~~~~~~~
+.. code-block:: pascal
+
+ 
+  TRSMinimap = record(TInterfaceBase)
+    CompassInfo: TMMCompassInfo;
+    OrbInfo: array[EMinimapOrb] of TMMOrbInfo;
+    MaskBMP: Int32;
+    MaskPoly: TPointArray;
+    Center: TPoint;
+  end;
+  
+Defines the type connected to the variable named `Minimap`.
+
+
+------------
+
+Minimap
+~~~~~~~~
+.. code-block:: pascal
+
+ var Minimap: TRSMinimap;
+
+This is the variable that stores all minimap related methods and variables.
+
+
+------------
+
+Methods
+--------
+
+
+------------
+
 Minimap.GetMiddle
 ~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
@@ -141,8 +204,8 @@ Minimap.isPlayerMoving
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-    function TRSMinimap.isPlayerMoving(MinShift: Integer = 300): Boolean;
-
+ function TRSMinimap.isPlayerMoving(MinShift: Integer = 300): Boolean;
+    
 Returns `True` if your character is moving.
 
 
@@ -152,9 +215,11 @@ Minimap.FindFlag
 ~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-    function TRSMinimap.FindFlag(BMP: Int32; out P: TPoint): Boolean; overload;
 
-Searches for the flag on a bitmap.
+    function TRSMinimap.FindFlag(BMP: Int32; out P: TPoint): Boolean; overload;
+    function TRSMinimap.FindFlag(out P: TPoint): Boolean; overload;
+
+First version searches for the flag on a bitmap. Second version searched for the flag on the client.
 
 
 ------------
@@ -222,20 +287,111 @@ Minimap.GetCompassAngle
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-    function TRSMinimap.GetCompassAngle(AsDegrees:Boolean=True): Extended;
+    function TRSMinimap.GetCompassAngle(AsDegrees:Boolean=True): Double;
 
 Returns the current compass angle, default as degrees.
 
 
 ------------
 
-Minimap.MouseSetCompassAngle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Minimap.SetCompassAngle_Mouse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-    function TRSMinimap.MouseSetCompassAngle(Angle, Tolerance: Extended): Boolean;
+ function TRSMinimap.SetCompassAngle_Mouse(Degrees: Double): Boolean;
 
-Some long code that does stuff.
+Uses the mouse to change the compass angle. This method should not be used directly, 
+but instead called through ``Minimap.SetCompassAngle``.
+
+
+------------
+
+Minimap.SetCompassAngle
+~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSMinimap.SetCompassAngle(Degrees: Double; Mouse: Boolean = True);
+
+Sets the compass angle to the desired angle. 
+
+
+------------
+
+Minimap.ClickCompass
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSMinimap.ClickCompass();
+
+Clicks the compass so that you face towards north.
+
+
+------------
+
+Minimap.GetDots
+~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSMinimap.GetDots(DotType: EMinimapDotType; SortFromPlayer: Boolean = True): TPointArray;
+
+Returns all the dots of the given type. See the defintion of EMinimapDotType. By default it will sort
+all the points from the center of the minimap, meaning the closest to your come first in the result.
+
+
+------------
+
+Minimap.FindDots
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSMinimap.FindDots(DotType: EMinimapDotType; MinCount: UInt32 = 1): Boolean;
+
+Returns True if the given number of dots can be found on the minimap. By default if it can find 1 dot of the given type.
+
+
+------------
+
+Minimap.isPointOn
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSMinimap.isPointOn(P: TPoint): Boolean;
+
+Returns ``True`` if the given point is within the minimap.
+
+
+------------
+
+Minimap.FilterPoints
+~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSMinimap.FilterPoints(var TPA: TPointArray);
+
+Filters the TPA so that no points are outside the minimap circle.
+
+
+------------
+
+Minimap.GetColorPercent
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSMinimap.GetColorPercent(Color: Int32; Tolerance: Int32 = 0): Int32;
+
+Returns hte percentage of the minimap that contains the given color. 
+Can be handy when checking if you are above or bellow groundlevel.
+
+
+------------
+
+Minimap.RandomCompass
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSMinimap.RandomCompass(Min, Max: Double; Mouse: Boolean = True);
+
+Rotates the compass to a random angle between Min and Max. Values are given as degrees.
 
 
 ------------
