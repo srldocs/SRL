@@ -90,6 +90,7 @@ Welcome to SRLs documentation!
 
    slackdebug
    rsclient
+   slackab
    misc(utils)
    slacktree
 

@@ -181,6 +181,17 @@ Returns the number of used slots
 
 ------------
 
+Inventory.DropItem
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSInventory.DropItem(Slot: Int32; UpText:TStringArray=[]): Boolean;
+
+Drops the given item.
+
+
+------------
+
 Inventory.DropItems
 ~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
