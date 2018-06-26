@@ -139,7 +139,6 @@
 <li class="toctree-l1"><a class="reference internal" href="grandexch.html">GrandExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shops.html">Shop Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="makescreen.html">MakeScreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chatbox.html">Chatbox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bankscreen.html">BankScreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bankscreen.html#pinscreen">PinScreen</a></li>
@@ -514,6 +513,9 @@
 <li class="toctree-l2"><a class="reference internal" href="misc.html#srl-getxpatlevel">SRL.GetXPAtLevel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#srl-getlevelatxp">SRL.GetLevelAtXP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#srl-getitemamount">SRL.GetItemAmount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#srl-finddtmintba">SRL.FindDTMInTBA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#srl-findmaskintba">SRL.FindMaskInTBA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#srl-findbmpintba">SRL.FindBMPInTBA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#srl-avgbrightness">SRL.AvgBrightness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#srl-peakbrightness">SRL.PeakBrightness</a></li>
 </ul>
@@ -853,7 +855,7 @@
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-prepare">ShopScreen.__Prepare</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-debug">ShopScreen.Debug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-isopen">ShopScreen.IsOpen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-finditem">ShopScreen.FindItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-find">ShopScreen.Find????</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-mouseover">ShopScreen.MouseOver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-isempty">ShopScreen.IsEmpty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-getstackamount">ShopScreen.GetStackAmount</a></li>
@@ -864,7 +866,6 @@
 <li class="toctree-l2"><a class="reference internal" href="shops.html#shopscreen-close">ShopScreen.Close</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="makescreen.html">MakeScreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chatbox.html">Chatbox</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chatbox.html#type-trschatbox">type TRSChatbox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chatbox.html#var-chatbox">var Chatbox</a></li>
@@ -907,7 +908,7 @@
 <li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-getslotbox">Bankscreen.GetSlotBox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-pointtoslot">Bankscreen.PointToSlot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-itemin">BankScreen.ItemIn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-finditem">BankScreen.FindItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-find">BankScreen.Find????</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-depositall">BankScreen.DepositAll</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-deposititem">BankScreen.DepositItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bankscreen.html#bankscreen-deposit">BankScreen.Deposit</a></li>
@@ -923,12 +924,12 @@
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-prepare">SmithingScreen.__Prepare</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-debug">SmithingScreen.Debug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-isopen">SmithingScreen.IsOpen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-finditem">SmithingScreen.FindItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-find">SmithingScreen.Find????</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-mouseover">SmithingScreen.MouseOver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-itemname">SmithingScreen.ItemName</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-barcount">SmithingScreen.BarCount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-cansmith">SmithingScreen.CanSmith</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-find">SmithingScreen.Find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#id1">SmithingScreen.Find</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-smith">SmithingScreen.Smith</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smithingscreen.html#smithingscreen-close">SmithingScreen.Close</a></li>
 </ul>

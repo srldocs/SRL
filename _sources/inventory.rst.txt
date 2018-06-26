@@ -234,21 +234,28 @@ Inventory.FindItem
 ~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-  function TRSInventory.FindItem(Mask: TMask; Tolerance:Int32 = 30; ContourTolerance:Int32 = 30; MaxToFind:Byte = 28): TIntegerArray;
-  function TRSInventory.FindItem(DTM: Integer; MaxToFind:Byte = 28): TIntegerArray; overload;
-  function TRSInventory.FindItem(BMP: Integer; Tolerance:Int32; MaxToFind:Byte): TIntegerArray; overload;
 
-Find the slots of the given item defined by a `TMask`, `DTM`, or `BMP`.
+  function TRSInventory.FindItem(Mask: TMask; Tolerance, ContourTolerance:Int32 = 30; MaxToFind:Byte = 0): TIntArray;
+  function TRSInventory.FindItem(DTM: Integer; MaxToFind:Byte = 0): TIntArray; overload;
+  function TRSInventory.FindItem(BMP: Integer; Tolerance:Int32; MaxToFind:Byte): TIntArray; overload;
 
-.. note:: Last parameter is not defaulted in the last overload `FindItem(BMP..)` for technical reasons._
+Find the slots with the given item defined by a `TMask`, `DTM`, or `BMP`.
+The last parameter ``MaxToFind`` defines how many you want us to find, by default
+it will look for all, but can be used to only search for 1 item if that's all you need.
+
+.. note::
+  _Last parameter is not defaulted in the last overload ``FindItem(BMP..)`` for technical reasons._
 
 **Example:**
 
 .. code-block:: pascal
 
-   itemArr := Inventory.FindItem(myMask);
+
+   items := Inventory.FindItem(myMask);
    if itemArr = [] then
-     WriteLn('Not found');
+     WriteLn('Not found')
+   else
+     WriteLn('Found in slots: ', items);
 
 
 ------------

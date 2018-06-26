@@ -76,7 +76,6 @@ Welcome to SRLs documentation!
    grandexch
    depositbox
    shops
-   makescreen
    chatbox
    bankscreen
    smithingscreen

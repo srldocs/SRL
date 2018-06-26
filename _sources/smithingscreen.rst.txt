@@ -64,13 +64,16 @@ Internally also used to prepare the boundaries of the interface
 
 ------------
 
-SmithingScreen.FindItem
-~~~~~~~~~~~~~~~~~~~~~~~
+SmithingScreen.Find????
+~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSSmithingScreen.FindItem(DTM: Integer): Int32;
-
-Returns the slot index for the given item, if it's found, otherwise ``-1``
+ 
+  function TRSSmithingScreen.FindDTM(DTM: Integer): Int32;
+  function TRSSmithingScreen.FindBMP(BMP: TMufasaBitmap; Tolerance: Int32): Int32;
+  function TRSSmithingScreen.FindMask(Mask: TMask; Tolerance, ContourTolerance: Int32): Int32;
+  
+Returns the index of the given DTM, BMP or Mask, otherwise ``-1`` if it's not found.
 
 
 ------------

@@ -1,8 +1,8 @@
 
 MakeScreen
 ==============
+This file stores all methods that are used for simpler interfaces like SmithingScreen.
 
-THIS FILE IS NO LONGER IN USED, AND WILL SOON BE REMOVED
+.. code-block:: pascal
 
-
-------------
+    Writeln(SmithingScreen.IsOpen());

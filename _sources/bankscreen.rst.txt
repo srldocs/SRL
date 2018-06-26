@@ -140,13 +140,16 @@ Alias `IsSlotUsed` exists for naming compatiblity with Inventory.
 
 ------------
 
-BankScreen.FindItem
+BankScreen.Find????
 ~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSInventory.FindItem(DTM: Integer): Int32;
-
-Returns the index of the given DTM, ``-1`` if it's not found.
+ 
+  function TRSBankScreen.FindDTM(DTM: Integer): Int32;
+  function TRSBankScreen.FindBMP(BMP: TMufasaBitmap; Tolerance: Int32): Int32;
+  function TRSBankScreen.FindMask(Mask: TMask; Tolerance, ContourTolerance: Int32): Int32;
+  
+Returns the index of the given DTM, BMP or Mask, otherwise ``-1`` if it's not found.
 
 
 ------------
