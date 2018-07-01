@@ -79,6 +79,17 @@ Returns the center of the minimap
 
 ------------
 
+Minimap._GetOrbValue
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+    function TRSMinimap._GetOrbValue(Orb: EMinimapOrb): Int32;
+
+Returns the value of the orb. Offsets the text shadow to figure out the text color.
+
+
+------------
+
 Minimap.GetPrayerLevel
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
