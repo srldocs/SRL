@@ -510,16 +510,21 @@ but instead called through <code class="docutils literal notranslate"><span clas
 <hr class="docutils" />
 <div class="section" id="minimap-getdots">
 <h3>Minimap.GetDots<a class="headerlink" href="#minimap-getdots" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSMinimap</span><span class="o">.</span><span class="nf">GetDots</span><span class="p">(</span><span class="n">DotType</span><span class="o">:</span> <span class="n">EMinimapDotType</span><span class="o">;</span> <span class="n">SortFromPlayer</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">True</span><span class="p">)</span><span class="o">:</span> <span class="n">TPointArray</span><span class="o">;</span>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSMinimap</span><span class="o">.</span><span class="nf">GetDots</span><span class="p">(</span><span class="n">DotTypes</span><span class="o">:</span> <span class="k">set</span> <span class="k">of</span> <span class="n">EMinimapDotType</span><span class="o">;</span> <span class="n">SortFromPlayer</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">True</span><span class="p">)</span><span class="o">:</span> <span class="n">TPointArray</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Returns all the dots of the given type. See the defintion of EMinimapDotType. By default it will sort
+<p>Returns all the dots of the given types. See the defintion of EMinimapDotType. By default it will sort
 all the points from the center of the minimap, meaning the closest to your come first in the result.</p>
+<p>The points in the resulting array are the top-left corner of the dot, so for the center offset it by 2 or 3, 2.5 for dead center.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">dotTPA</span> <span class="o">:=</span> <span class="n">Minimap</span><span class="o">.</span><span class="n">GetDots</span><span class="p">([</span><span class="n">MMDotNPC</span><span class="o">,</span> <span class="n">MMDotPlayer</span><span class="p">])</span><span class="o">;</span>
+</pre></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="minimap-finddots">
 <h3>Minimap.FindDots<a class="headerlink" href="#minimap-finddots" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSMinimap</span><span class="o">.</span><span class="nf">FindDots</span><span class="p">(</span><span class="n">DotType</span><span class="o">:</span> <span class="n">EMinimapDotType</span><span class="o">;</span> <span class="n">MinCount</span><span class="o">:</span> <span class="n">UInt32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSMinimap</span><span class="o">.</span><span class="nf">FindDots</span><span class="p">(</span><span class="n">DotType</span><span class="o">:</span> <span class="k">set</span> <span class="k">of</span> <span class="n">EMinimapDotType</span><span class="o">;</span> <span class="n">MinCount</span><span class="o">:</span> <span class="n">UInt32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Returns True if the given number of dots can be found on the minimap. By default if it can find 1 dot of the given type.</p>

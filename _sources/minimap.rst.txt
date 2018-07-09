@@ -343,10 +343,19 @@ Minimap.GetDots
 ~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSMinimap.GetDots(DotType: EMinimapDotType; SortFromPlayer: Boolean = True): TPointArray;
+ function TRSMinimap.GetDots(DotTypes: set of EMinimapDotType; SortFromPlayer: Boolean = True): TPointArray;
 
-Returns all the dots of the given type. See the defintion of EMinimapDotType. By default it will sort
+Returns all the dots of the given types. See the defintion of EMinimapDotType. By default it will sort
 all the points from the center of the minimap, meaning the closest to your come first in the result.
+
+The points in the resulting array are the top-left corner of the dot, so for the center offset it by 2 or 3, 2.5 for dead center.
+
+**Example**
+
+.. code-block:: pascal
+
+
+  dotTPA := Minimap.GetDots([MMDotNPC, MMDotPlayer]);
 
 
 ------------
@@ -355,7 +364,7 @@ Minimap.FindDots
 ~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSMinimap.FindDots(DotType: EMinimapDotType; MinCount: UInt32 = 1): Boolean;
+ function TRSMinimap.FindDots(DotType: set of EMinimapDotType; MinCount: UInt32 = 1): Boolean;
 
 Returns True if the given number of dots can be found on the minimap. By default if it can find 1 dot of the given type.
 
