@@ -230,28 +230,25 @@ Drops all the given items ``Slots`` except for the items in ``IgnoreSolots``
 
 ------------
 
-Inventory.FindItem
+Inventory.FindXXXX
 ~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
 
-  function TRSInventory.FindItem(Mask: TMask; Tolerance, ContourTolerance:Int32 = 30; MaxToFind:Byte = 0): TIntArray;
-  function TRSInventory.FindItem(DTM: Integer; MaxToFind:Byte = 0): TIntArray; overload;
-  function TRSInventory.FindItem(BMP: Integer; Tolerance:Int32; MaxToFind:Byte): TIntArray; overload;
+  function TRSInventory.FindMask(Mask: TMask; Tolerance, ContourTolerance:Int32 = 30; MaxToFind:Byte = 0): TIntArray;
+  function TRSInventory.FindDTM(DTM: Integer; MaxToFind:Byte = 0): TIntArray; overload;
+  function TRSInventory.FindBMP(BMP: Integer; Tolerance:Int32; MaxToFind:Byte = 0): TIntArray; overload;
 
 Find the slots with the given item defined by a `TMask`, `DTM`, or `BMP`.
 The last parameter ``MaxToFind`` defines how many you want us to find, by default
 it will look for all, but can be used to only search for 1 item if that's all you need.
-
-.. note::
-  _Last parameter is not defaulted in the last overload ``FindItem(BMP..)`` for technical reasons._
 
 **Example:**
 
 .. code-block:: pascal
 
 
-   items := Inventory.FindItem(myMask);
+   items := Inventory.FindMask(myMask);
    if itemArr = [] then
      WriteLn('Not found')
    else
