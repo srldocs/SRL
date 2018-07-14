@@ -87,7 +87,7 @@ TMufasaBitmap.AvgBrightness
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-    procedure TMufasaBitmap.AvgBrightness();
+    procedure TMufasaBitmap.AvgBrightness(Area: TBox = [0,0,-1,-1]);
 
 Returns a value between 0 and 100 that defines how bright the image is.
 
@@ -98,7 +98,7 @@ TMufasaBitmap.PeakBrightness
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-    procedure TMufasaBitmap.PeakBrightness();
+    procedure TMufasaBitmap.PeakBrightness(Area: TBox = [0,0,-1,-1]);
 
 Returns the maximum brightness in the image in the range `0..100`.
 
