@@ -5,6 +5,7 @@ Welcome to SRLs documentation!
    :caption: SHARED
 
    text
+   keyboard
    color
    drawing
    wrappers
