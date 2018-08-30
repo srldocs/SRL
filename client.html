@@ -121,10 +121,15 @@
 <li class="toctree-l1"><a class="reference internal" href="chooseoption.html">ChooseOption</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#srl-isclientstate">srl.IsClientState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">srl.IsClientState</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#srl-isloggedin">srl.IsLoggedIn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#srl-isclientloading">srl.isClientLoading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">srl.isClientLoading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#srl-isclientready">srl.isClientReady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">srl.IsLoggedIn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#srl-isclientready">srl.IsClientReady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">srl.IsClientReady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#srl-isclientloading">srl.IsClientLoading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">srl.IsClientLoading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#srl-waitclientloading">srl.WaitClientLoading</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="antiban.html">Antiban</a></li>
@@ -227,42 +232,87 @@
             
   <div class="section" id="client">
 <h1>client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
-<p>Refers to the oldschool runescape client. Stores somewhat misc methods that relates to client checks.</p>
+<p>Refers to the oldschool runescape client. Stores general methods checking the state of the client.</p>
 <hr class="docutils" />
-<div class="section" id="srl-isloggedin">
-<h2>srl.IsLoggedIn<a class="headerlink" href="#srl-isloggedin" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">isLoggedIn</span><span class="p">(</span><span class="n">WaitTime</span><span class="o">:</span> <span class="n">Int32</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+<div class="section" id="srl-isclientstate">
+<h2>srl.IsClientState<a class="headerlink" href="#srl-isclientstate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsClientState</span><span class="p">(</span><span class="n">States</span><span class="o">:</span> <span class="n">ERSClientStateSet</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if your character is logged in.</dt>
-<dd>By default it doesn’t wait, but you can change <code class="docutils literal notranslate"><span class="pre">WaitTime</span></code> to whatever.</dd>
-</dl>
-</div>
-<hr class="docutils" />
-<div class="section" id="srl-isclientloading">
-<h2>srl.isClientLoading<a class="headerlink" href="#srl-isclientloading" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">isClientLoading</span><span class="p">(</span><span class="n">WaitTime</span><span class="o">:</span> <span class="n">Int32</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
-</pre></div>
-</div>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if we are still waiting for the client to boot up.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the client state equals any of the <code class="docutils literal notranslate"><span class="pre">States`</span></code></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="id1">
-<h2>srl.isClientLoading<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">WaitClientLoading</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+<h2>srl.IsClientState<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsClientState</span><span class="p">(</span><span class="n">State</span><span class="o">:</span> <span class="n">ERSClientState</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Waits forever, or until the client has successfully booted.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the clients state equals the <code class="docutils literal notranslate"><span class="pre">State</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="srl-isloggedin">
+<h2>srl.IsLoggedIn<a class="headerlink" href="#srl-isloggedin" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsLoggedIn</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if a player is in game.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>srl.IsLoggedIn<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsLoggedIn</span><span class="p">(</span><span class="n">WaitTime</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Overload that accepts a <code class="docutils literal notranslate"><span class="pre">WaitTime</span></code> parameter.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="srl-isclientready">
-<h2>srl.isClientReady<a class="headerlink" href="#srl-isclientready" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">isClientReady</span><span class="p">(</span><span class="n">WaitTime</span><span class="o">:</span> <span class="n">Int32</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+<h2>srl.IsClientReady<a class="headerlink" href="#srl-isclientready" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsClientReady</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the client is ready to be used.
-If the client isn’t ready it will wait, expecting it to get ready.</p>
+<dl class="docutils">
+<dt>Returns true if the client is in a known state, this means either of the following are active:</dt>
+<dd><ul class="first last simple">
+<li>Logged in</li>
+<li>Login screen</li>
+<li>World switcher</li>
+<li>Lobby</li>
+</ul>
+</dd>
+</dl>
+</div>
+<hr class="docutils" />
+<div class="section" id="id3">
+<h2>srl.IsClientReady<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsClientReady</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Overload that accepts <code class="docutils literal notranslate"><span class="pre">WaitTime</span></code> parameter.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="srl-isclientloading">
+<h2>srl.IsClientLoading<a class="headerlink" href="#srl-isclientloading" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsClientLoading</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the client is loading by checking for <code class="docutils literal notranslate"><span class="pre">Loading</span> <span class="pre">-</span> <span class="pre">please</span> <span class="pre">wait</span></code> in the top left.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h2>srl.IsClientLoading<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">IsClientLoading</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Overload that accepts <code class="docutils literal notranslate"><span class="pre">WaitTime</span></code> parameter.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="srl-waitclientloading">
+<h2>srl.WaitClientLoading<a class="headerlink" href="#srl-waitclientloading" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">TSRL</span><span class="o">.</span><span class="nf">WaitClientLoading</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Waits forever until the client has finished loading.</p>
 <hr class="docutils" />
 </div>
 </div>

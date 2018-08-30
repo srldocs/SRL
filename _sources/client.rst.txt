@@ -1,53 +1,110 @@
 
 client
 ======
-Refers to the oldschool runescape client. Stores somewhat misc methods that relates to client checks.
+Refers to the oldschool runescape client. Stores general methods checking the state of the client.
+
+
+------------
+
+srl.IsClientState
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.IsClientState(States: ERSClientStateSet): Boolean; overload;
+
+Returns ``True`` if the client state equals any of the ``States```
+
+
+------------
+
+srl.IsClientState
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.IsClientState(State: ERSClientState): Boolean; overload;
+
+Returns ``True`` if the clients state equals the ``State``
 
 
 ------------
 
 srl.IsLoggedIn
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TSRL.isLoggedIn(WaitTime: Int32 = 0): Boolean; overload;
+ function TSRL.IsLoggedIn: Boolean; overload;
 
-Returns ``True`` if your character is logged in.
- By default it doesn't wait, but you can change ``WaitTime`` to whatever.
+Returns ``True`` if a player is in game.
 
 
 ------------
 
-srl.isClientLoading
-~~~~~~~~~~~~~~~~~~~~
+srl.IsLoggedIn
+~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TSRL.isClientLoading(WaitTime: Int32 = 0): Boolean;
+ function TSRL.IsLoggedIn(WaitTime: Int32): Boolean; overload;
 
-Returns ``True`` if we are still waiting for the client to boot up.
+Overload that accepts a ``WaitTime`` parameter.
 
 
 ------------
 
-srl.isClientLoading
-~~~~~~~~~~~~~~~~~~~~
+srl.IsClientReady
+~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TSRL.WaitClientLoading: Boolean;
+ function TSRL.IsClientReady: Boolean; overload;
 
-Waits forever, or until the client has successfully booted.
+Returns true if the client is in a known state, this means either of the following are active:
+  - Logged in
+  - Login screen
+  - World switcher
+  - Lobby
 
 
 ------------
 
-srl.isClientReady
+srl.IsClientReady
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.IsClientReady: Boolean; overload;
+
+Overload that accepts ``WaitTime`` parameter.
+
+
+------------
+
+srl.IsClientLoading
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.IsClientLoading: Boolean; overload;
+
+Returns ``True`` if the client is loading by checking for ``Loading - please wait`` in the top left.
+
+
+------------
+
+srl.IsClientLoading
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TSRL.IsClientLoading: Boolean; overload;
+
+Overload that accepts ``WaitTime`` parameter.
+
+
+------------
+
+srl.WaitClientLoading
 ~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TSRL.isClientReady(WaitTime: Int32 = 0): Boolean; overload;
+ procedure TSRL.WaitClientLoading;
 
-Returns ``True`` if the client is ready to be used. 
-If the client isn't ready it will wait, expecting it to get ready.
+Waits forever until the client has finished loading.
 
 
 ------------
