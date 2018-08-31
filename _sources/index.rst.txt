@@ -89,7 +89,6 @@ Welcome to SRLs documentation!
    :caption: UTILS
 
    slackdebug
-   rsclient
    slackab
    misc(utils)
    slacktree
