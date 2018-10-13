@@ -37,7 +37,7 @@ The comments explains it. This is the datastructure MM2MS uses.
 ------------
 
 var MM2MS
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 .. code-block:: pascal
 
 
@@ -49,7 +49,7 @@ The global variable which you would refer to.
 ------------
 
 MM2MS.Init
-~~~~~~~~~~~
+~~~~~~~~~~
 .. code-block:: pascal
 
  procedure TMinimapToMS.Init(Resizable: Boolean);
@@ -63,7 +63,7 @@ MM2MS supports Resizable RS client, but SRL does not. This is added only for fut
 ------------
 
 MM2MS.Transform
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TMinimapToMS.Transform(coord: Vector3; matrix: TMatrix4): Vector3;
@@ -74,7 +74,7 @@ Transforms the given coordinate with the given transformation matrix ``matrix``
 ------------
 
 MM2MS.Project
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TMinimapToMS.Project(Coords: Vector3Array; Rotation: Vector3): TPointArray;
@@ -85,7 +85,7 @@ Projects the given coordinates ``coords`` and applys the given ``Rotation`` vect
 ------------
 
 MM2MS.Run
-~~~~~~~~~~
+~~~~~~~~~
 .. code-block:: pascal
 
  function TMinimapToMS.Run(Arr: Vector3Array; Roll:Single=$FFFF): TPointArray;
@@ -96,22 +96,18 @@ The method we actually call (internally) to project our coordinates from the min
 ------------
 
 MM2MS.SetZoom
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TMinimapToMS.SetZoom(ZoomLevel: Double): TPointArray;
+ procedure TMinimapToMS.SetZoom(Notch: ERSZoomNotch);
 
-If you are not playing at fully zoomed out you need to set the zoom-level for MM2MS to operate with.
-The expected input is a value between ``0`` and ``100`` where ``100`` is fully zoomed out.
-
-** Example **
+Changes the zoom level MM2MS operates at.
 
 .. code-block:: pascal
 
 
-  MM2MS.SetZoom(Options.GetZoom());
+  MM2MS.SetZoom(Options.GetZoomNotch());
 
-The example sets the zoom to whatever level is set in the RS options.
 
 
 ------------
@@ -124,7 +120,7 @@ Extend the minimap-functionality with MM2MS functions
 ------------
 
 Minimap.ArrToMs
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  
@@ -138,7 +134,7 @@ The first method takes a vector3 array as input, so we can pass height as well, 
 ------------
 
 Minimap.VecToMs
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSMinimap.VecToMs(Vec: Vector3; Roll:Single=$FFFF): TPoint;
@@ -177,7 +173,7 @@ Takes a single coordinate as a Vector3 on the minimap, and converts it to a rect
 ------------
 
 Minimap.PointToMsRect
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSMinimap.PointToMsRect(PT: TPoint; Roll:Single=$FFFF): TRectangle;
@@ -190,7 +186,7 @@ Takes a single coordinate as a TPoint on the minimap, and converts it to a recta
 ------------
 
 Minimap.VecToMsBox
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSMinimap.VecToMsBox(Vec: Vector3; Roll:Single=$FFFF): TBox;
@@ -203,7 +199,7 @@ Takes a single coordinate as a Vector3 on the minimap, and converts it to a roug
 ------------
 
 Minimap.VecToMsBox
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSMinimap.PointToMsBox(PT: TPoint; Roll:Single=$FFFF): TBox;
@@ -228,7 +224,7 @@ The static point is therefor gathered at north, and it will rotate it as expecte
 ------------
 
 Minimap.StaticToMs
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSMinimap.StaticToMs(StaticMMPoint: TPoint; Height:Int32=0): TPoint;
@@ -246,7 +242,7 @@ Extend the mainscreen-functionality with MS2MM function
 ------------
 
 Mainscreen.PointToMM
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSMainScreen.PointToMM(MS: TPoint; Height: Int32=0; Accuracy:Double=0.2): Vector3;

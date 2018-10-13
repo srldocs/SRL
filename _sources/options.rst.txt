@@ -97,23 +97,57 @@ Sets the mainscreen brightness
 ------------
 
 Options.GetZoom
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
  function TRSOptions.GetZoom(): Int32;
 
-Returns the mainscreen zoom
+Returns the mainscreen zoom level 0..100.
 
 
 ------------
 
 Options.SetZoom
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSOptions.SetZoom(APosition: Byte): Boolean;
+ procedure TRSOptions.SetZoom(Level: Int32);
 
-Sets the zoom of the mainscreen. 0 = Zoomed out, 100 = Zoomed in.
+Sets the mainscreen zoom level by scrolling, accurate to within 3 levels.
+
+
+------------
+
+type ERSZoomNotch
+~~~~~~~~~~~~~~~~~
+  Zoom level notches.
+
+  ZOOM_LEVEL_0 = Zoomed out fully.
+  ZOOM_LEVEL_50 = Default.
+  ZOOM_LEVEL_100 = Zoomed in fully.
+
+
+------------
+
+Options.GetZoomNotch
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSOptions.GetZoomNotch: ERSZoomNotch;
+
+Returns the current zoom notch. ZOOM_NOTCH_UNKNOWN if not either 0,25,50,75,100.
+
+
+------------
+
+Options.SetZoomNotch
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSOptions.SetZoomNotch(Notch: ERSZoomNotch; Randomness: Int32 = 0): Boolean;
+
+Moves the zoom bar slider to the `Notch` position.
+`Randomness` is the random +- we add to the coord of the notch position.
 
 
 ------------
