@@ -33,3 +33,17 @@ Same as the above but lets you specify X- and Y-wise min & max distance separate
 
 
 ------------
+
+TPAOverlap
+~~~~~~~~~~
+.. code-block:: pascal
+
+ 
+  function TPAOverlap(TPA1,TPA2:TPointArray; r:Int32; overlap:EOverlap=eoBoth): TPointArray;
+  type EOverlap = (eoLeft,eoRight,eoBoth);
+  
+An older version with some other parameters from what the above takes.
+Exists here for legacy reasons.
+
+
+------------
