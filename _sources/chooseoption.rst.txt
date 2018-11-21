@@ -122,7 +122,7 @@ ChooseOption.Select
 
   function TRSChooseOption.Select(SubStrings: TStringArray; MouseAction:Int32=mouse_left; AClose:Boolean=True; CaseSensitive:Boolean=True): Boolean;
   function TRSChooseOption.Select(Option: String; MouseAction:Int32=mouse_left; AClose:Boolean=True; CaseSensitive:Boolean=True): Boolean;
-  
+
 Same as SelectID, except that this will look for the option by it's text, rather than by id.
 
 
@@ -147,7 +147,7 @@ ChooseOption.Close
 
   function TRSChooseOption.Close(tryTime:Int32=-1): Boolean;
 
-Closes the option menu by dragging the mouse away from it, if that 
+Closes the option menu by dragging the mouse away from it, if that
 failed it clicks the "Close"-option.
 
 .. note:: by slacky
