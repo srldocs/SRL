@@ -36,16 +36,20 @@ MainScreen.IsUpText
 
 .. code-block:: pascal
 
-    function TRSMainScreen.IsUpText(SubStrs: TStringArray; WaitTime: UInt32 = 350): Boolean;
+    function TRSMainScreen.IsUpText(Strings: TStringArray; Timeout: Int32 = -1; Confirm: Int32 = 50): Boolean;
 
-Returns True if any of the strings in 'SubStrs' is in the uptext. Will search up to 'WaitTime'
-which by default is 260.
+Returns True if any of the strings are in the uptext, will search until `Timeout` is reached.
+
+ * `Confirm` by default will wait 50 milliseconds after uptext has been found and check if the uptext is still correct,
+    this is because RS uptext is delayed at least a frame.
+
+ * `Timeout` by default is -1 which will search for between 85 to 200 milliseconds.
 
 Example:
 
 .. code-block:: pascal
 
-    if (MainScreen.IsUpText(['Attack Chicken', 'ack Chicken'])) then
+    if MainScreen.IsUpText(['Attack', 'Chicken']) then
       Mouse.Click(mouse_Left);
 
 

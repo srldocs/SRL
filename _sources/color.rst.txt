@@ -28,6 +28,7 @@ srl.FindColors
   function TSRL.FindColors(out TPA: TPointArray; Color: TCTSColor;  Area: TBox): UInt32; constref;
   function TSRL.FindColors(out TPA: TPointArray; Color: TCTS1Color; Area: TBox): UInt32; constref;
   function TSRL.FindColors(out TPA: TPointArray; Color: TCTS2Color; Area: TBox): UInt32; constref;
+  function TSRL.FindColors(out TPA: TPointArray; Color: array of TCTS2Color; Area: TBox): UInt32; constref;
 
 Searches for the given Color, returns the resulting points in the TPA.
 
