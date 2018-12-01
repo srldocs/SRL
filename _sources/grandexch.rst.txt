@@ -606,6 +606,31 @@ Opens the offer at the given slot.
 
 ------------
 
+GrandExchange.GetNPCs
+~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSGrandExch.GetNPCs: T2DPointArray;
+
+Returns the GE npc mainscreen positions. Finds NPC dots on the minimap then
+MM2MS with a offset.
+
+
+
+------------
+
+GrandExchange.Open
+~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSGrandExch.Open: Boolean;
+
+Opens the grand exchange. Uses `ge_clerk.aca` colors.
+
+
+
+------------
+
 GrandExchange.Debug
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal

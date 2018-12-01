@@ -145,6 +145,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">BankScreen</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#bankscreen-isopen">BankScreen.IsOpen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bankscreen-openat">BankScreen.OpenAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bankscreen-openbank-ge">BankScreen.OpenBank_GE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bankscreen-magicalbankerfinder">BankScreen._MagicalBankerFinder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bankscreen-open">BankScreen.Open</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bankscreen-close">BankScreen.Close</a></li>
@@ -263,6 +264,14 @@ All methods here are called with the bankscreen <code class="docutils literal no
 <p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the bankscreen could be open’d at given location <code class="docutils literal notranslate"><span class="pre">P</span></code></p>
 </div>
 <hr class="docutils" />
+<div class="section" id="bankscreen-openbank-ge">
+<h2>BankScreen.OpenBank_GE<a class="headerlink" href="#bankscreen-openbank-ge" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBankScreen</span><span class="o">.</span><span class="nf">OpenBank_GE</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Opens the bank at the grand exchange. Uses <cite>ge_bank.aca</cite> colors.</p>
+</div>
+<hr class="docutils" />
 <div class="section" id="bankscreen-magicalbankerfinder">
 <h2>BankScreen._MagicalBankerFinder<a class="headerlink" href="#bankscreen-magicalbankerfinder" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBankScreen</span><span class="o">.</span><span class="nf">_MagicalBankerFinder</span><span class="p">(</span><span class="n">BoothTopColor</span><span class="o">:</span> <span class="n">TCTS2Color</span><span class="o">;</span> <span class="n">BankerColor</span><span class="o">:</span> <span class="n">EBankerColor</span><span class="o">;</span> <span class="n">Offset</span><span class="o">:</span> <span class="n">TPoint</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
@@ -276,7 +285,7 @@ All methods here are called with the bankscreen <code class="docutils literal no
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBankScreen</span><span class="o">.</span><span class="nf">Open</span><span class="p">(</span><span class="n">Loc</span><span class="o">:</span> <span class="n">EBankLocation</span><span class="o">;</span> <span class="n">Tries</span><span class="o">:</span> <span class="n">Int32</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Opens the bankscreen at the selected bank location.</p>
+<p>Attempts to open the bank at the selected bank location.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="bankscreen-close">
@@ -377,7 +386,8 @@ Alias <cite>IsSlotUsed</cite> exists for naming compatiblity with Inventory.</p>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBankScreen</span><span class="o">.</span><span class="nf">RearrangeMode</span><span class="p">(</span><span class="n">mode</span><span class="o">:</span><span class="n">EBankButton</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Changes the way items are moved around, valid options are <code class="docutils literal notranslate"><span class="pre">bbSwap</span></code> and <code class="docutils literal notranslate"><span class="pre">bbInsert</span></code>.</p>
+<p>Changes the way items are moved around.
+<code class="docutils literal notranslate"><span class="pre">Mode</span></code> can be either <code class="docutils literal notranslate"><span class="pre">BANK_BUTTON_REARRANGE_SWAP</span></code> or <code class="docutils literal notranslate"><span class="pre">BANK_BUTTON_REARRANGE_INSERT</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="bankscreen-withdrawas">
@@ -385,7 +395,8 @@ Alias <cite>IsSlotUsed</cite> exists for naming compatiblity with Inventory.</p>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBankScreen</span><span class="o">.</span><span class="nf">WithdrawAs</span><span class="p">(</span><span class="n">mode</span><span class="o">:</span><span class="n">EBankButton</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Changes the way items are withdrawn. Valid options are <code class="docutils literal notranslate"><span class="pre">bbItem</span></code> and <code class="docutils literal notranslate"><span class="pre">bbNote</span></code></p>
+<p>Changes the way items are withdrawn.
+<cite>Mode`</cite> can be either <code class="docutils literal notranslate"><span class="pre">BANK_BUTTON_WITHDRAW_ITEM</span></code> and <code class="docutils literal notranslate"><span class="pre">BANK_BUTTON_WITHDRAW_NOTE</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="bankscreen-search">

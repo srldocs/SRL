@@ -33,6 +33,18 @@ Returns ``True`` if the bankscreen could be open'd at given location ``P``
 
 ------------
 
+BankScreen.OpenBank_GE
+~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBankScreen.OpenBank_GE: Boolean;
+
+Opens the bank at the grand exchange. Uses `ge_bank.aca` colors.
+
+
+
+------------
+
 BankScreen._MagicalBankerFinder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
@@ -46,13 +58,12 @@ Calculates and finds where a bank NPC should be based from the bank booth.
 ------------
 
 BankScreen.Open
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
+ function TRSBankScreen.Open(Loc: EBankLocation; Tries: Int32 = 3): Boolean;
 
-   function TRSBankScreen.Open(Loc: EBankLocation; Tries: Int32 = 3): Boolean;
-
-Opens the bankscreen at the selected bank location.
+Attempts to open the bank at the selected bank location.
 
 
 ------------
@@ -193,7 +204,8 @@ BankScreen.RearrangeMode
 
   function TRSBankScreen.RearrangeMode(mode:EBankButton): Boolean;
 
-Changes the way items are moved around, valid options are ``bbSwap`` and ``bbInsert``.
+Changes the way items are moved around.
+``Mode`` can be either ``BANK_BUTTON_REARRANGE_SWAP`` or ``BANK_BUTTON_REARRANGE_INSERT``.
 
 
 ------------
@@ -204,13 +216,14 @@ BankScreen.WithdrawAs
 
   function TRSBankScreen.WithdrawAs(mode:EBankButton): Boolean;
 
-Changes the way items are withdrawn. Valid options are ``bbItem`` and ``bbNote``
+Changes the way items are withdrawn.
+`Mode`` can be either ``BANK_BUTTON_WITHDRAW_ITEM`` and ``BANK_BUTTON_WITHDRAW_NOTE``.
 
 
 ------------
 
 BankScreen.Search
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
   function TRSBankScreen.Search(item:String): Boolean;
@@ -221,7 +234,7 @@ Search for an item using the search option in the bank.
 ------------
 
 BankScreen.Withdraw
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
   function TRSBankScreen.Withdraw(slot, amount:Int32; upText:TStringArray=[]; withdrawMode:EBankButton=bbItem): Boolean;
