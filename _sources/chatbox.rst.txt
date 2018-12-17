@@ -127,9 +127,10 @@ Chatbox.GetOptions
 ~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSChatbox.GetOptions(TextColors: TIntegerArray = [clBlack, clWhite]): array of TChatOption;
+ function TRSChatbox.GetOptions(Colors: TIntegerArray = [$000000, $FFFFFF]): TRSChatOptionArray;
 
-Returns all the options found in teh chatbox area
+Returns all the options found in the chatbox area.
+Even works for reading conversations.
 
 
 ------------
