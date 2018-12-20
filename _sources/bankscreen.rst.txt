@@ -225,8 +225,7 @@ Changes the way items are withdrawn.
 BankScreen.Search
 ~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
-
-  function TRSBankScreen.Search(item:String): Boolean;
+   function TRSBankScreen.Search(Item: String): Boolean;
 
 Search for an item using the search option in the bank.
 
