@@ -47,7 +47,7 @@ type EAdjustButton
 ~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- 
+
    EAdjustButton = (
      abDecQuant, abQuantInc, abDecPrice, abIncPrice,
      abIncQuant1, abIncQuant10, abIncQuant100, abIncQuant1K, abEnterQuantity,
@@ -85,7 +85,7 @@ type TExchangeInfo
 ~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- 
+
    TExchangeInfo = record
      Item: String;
      Typ: EExchType;
@@ -115,8 +115,8 @@ The variable used to interact with the grand exchange interface.
     GrandExchange.Offer.SellItem(4);      // item at inventory slot = 4
     GrandExchange.Offer.SetPrice(1000);   // 1000 each
     GrandExchange.Offer.SetQuantity(5);   // 5 of these items
-    GrandExchange.Offer.Confirm(); 
-  end;  
+    GrandExchange.Offer.Confirm();
+  end;
 
 
 ------------
@@ -132,7 +132,7 @@ GrandExchange.RecognizeStr
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- 
+
    function TGrandExchStub.RecognizeStr(B:TBox; Color:Int32; Font:String; Tol:Int32=0;
                                         WSplit:Int32=3; HSplit:Int32=2): String;
 
@@ -145,7 +145,7 @@ GrandExchange.RecognizeInt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- 
+
    function TGrandExchStub.RecognizeInt(B:TBox; Color:Int32; Font:String; Tol:Int32=0;
                                         WSplit:Int32=3; HSplit:Int32=2): Int32;
 
@@ -205,7 +205,7 @@ Clicks one of the many exchange buttons.
 
 .. code-block:: pascal
 
- 
+
   GrandExchange.Offer.Click(ebAbort); // abort the offer
   GrandExchange.Click(ebCollect);     // collect items / money
 
@@ -253,7 +253,7 @@ Click one of the adjustment buttons see [type-EAdjustButton]_
 
 .. code-block:: pascal
 
- 
+
    GrandExchange.Offer.Click(abIncPrice5Prc, 2); //click `+5%`, 2 times.
 
 
@@ -263,7 +263,7 @@ GrandExchange.Offer.Confirm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
- procedure TGrandExchOffer.Confirm();
+ function TGrandExchOffer.Confirm: Boolean;
 
 Press that bigass confirm button.
 
@@ -567,7 +567,7 @@ GrandExchange.Info
 
  function TRSGrandExch.Info(Slot: Int32): TExchangeInfo;
 
-Returns all the data related to the offer at the given slot. 
+Returns all the data related to the offer at the given slot.
 You get the type of the offer, and it's state, progress, name and price. The Sum filed will be ``-1``
 
 
