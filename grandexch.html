@@ -199,6 +199,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#grandexchange-viewoffer">GrandExchange.ViewOffer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#grandexchange-getnpcs">GrandExchange.GetNPCs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#grandexchange-open">GrandExchange.Open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trsgrandexch-openbank">TRSGrandExch.OpenBank</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">GrandExchange.Debug</a></li>
 </ul>
 </li>
@@ -738,7 +739,17 @@ MM2MS with a offset.</p>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSGrandExch</span><span class="o">.</span><span class="nf">Open</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Opens the grand exchange. Uses <cite>ge_clerk.aca</cite> colors.</p>
+<p>Opens the grand exchange. Uses <cite>ge_clerk.aca</cite> colors.
+Should work at any of the SRL supported zoom levels providing MM2MS.SetZoom is set correctly.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="trsgrandexch-openbank">
+<h3>TRSGrandExch.OpenBank<a class="headerlink" href="#trsgrandexch-openbank" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSGrandExch</span><span class="o">.</span><span class="nf">OpenBank</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Opens the bank at the grand exchange. Uses <cite>ge_bank.aca</cite> colors.
+Should work at any of the SRL supported zoom levels providing MM2MS.SetZoom is set correctly.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="id4">

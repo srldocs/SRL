@@ -626,6 +626,20 @@ GrandExchange.Open
  function TRSGrandExch.Open: Boolean;
 
 Opens the grand exchange. Uses `ge_clerk.aca` colors.
+Should work at any of the SRL supported zoom levels providing MM2MS.SetZoom is set correctly.
+
+
+
+------------
+
+TRSGrandExch.OpenBank
+~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSGrandExch.OpenBank: Boolean;
+
+Opens the bank at the grand exchange. Uses `ge_bank.aca` colors.
+Should work at any of the SRL supported zoom levels providing MM2MS.SetZoom is set correctly.
 
 
 

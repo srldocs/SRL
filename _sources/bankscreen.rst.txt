@@ -4,9 +4,13 @@ BankScreen
 This file stores all methods that are used in the bankscreen-iterface.
 All methods here are called with the bankscreen ``BankScreen`` variable.
 
+* To open the grand exchange use `GrandExchange.OpenBank()` from grandexch.simba.
+  (GE isn't referenced in this file to keep the include clean of fowarding)
+
 .. code-block:: pascal
 
     Writeln(BankScreen.IsOpen());
+
 
 
 ------------
@@ -29,18 +33,6 @@ BankScreen.OpenAt
  function TRSBankScreen.OpenAt(P: TPoint): Boolean;
 
 Returns ``True`` if the bankscreen could be open'd at given location ``P``
-
-
-------------
-
-BankScreen.OpenBank_GE
-~~~~~~~~~~~~~~~~~~~~~~
-.. code-block:: pascal
-
- function TRSBankScreen.OpenBank_GE: Boolean;
-
-Opens the bank at the grand exchange. Uses `ge_bank.aca` colors.
-
 
 
 ------------
