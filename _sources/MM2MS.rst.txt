@@ -79,7 +79,7 @@ MM2MS.Project
 
  function TMinimapToMS.Project(Coords: Vector3Array; Rotation: Vector3): TPointArray;
 
-Projects the given coordinates ``coords`` and applys the given ``Rotation`` vector to the projection.
+Projects the given coordinates ``coo rds`` and applys the given ``Rotation`` vector to the projection.
 
 
 ------------
@@ -99,7 +99,7 @@ MM2MS.SetZoom
 ~~~~~~~~~~~~~
 .. code-block:: pascal
 
- procedure TMinimapToMS.SetZoom(Notch: ERSZoomNotch);
+ procedure TMinimapToMS.SetZoom(Notch: ERSZoomNotch); overload;
 
 Changes the zoom level MM2MS operates at.
 
@@ -107,6 +107,23 @@ Changes the zoom level MM2MS operates at.
 
 
   MM2MS.SetZoom(Options.GetZoomNotch());
+
+
+
+------------
+
+MM2MS.SetZoom
+~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TMinimapToMS.SetZoom; overload;
+
+Sets up MM2MS for the current zoom level in game.
+
+.. code-block:: pascal
+
+
+  MM2MS.SetZoom();
 
 
 

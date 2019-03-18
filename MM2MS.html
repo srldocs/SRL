@@ -127,6 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#mm2ms-project">MM2MS.Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mm2ms-run">MM2MS.Run</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mm2ms-setzoom">MM2MS.SetZoom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">MM2MS.SetZoom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#minimap">Minimap</a><ul>
@@ -136,7 +137,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#minimap-vectomsrect">Minimap.VecToMsRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#minimap-pointtomsrect">Minimap.PointToMsRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#minimap-vectomsbox">Minimap.VecToMsBox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Minimap.VecToMsBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Minimap.VecToMsBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#minimap-statictomsrect">Minimap.StaticToMsRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#minimap-statictoms">Minimap.StaticToMs</a></li>
 </ul>
@@ -305,7 +306,7 @@ MM2MS supports Resizable RS client, but SRL does not. This is added only for fut
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TMinimapToMS</span><span class="o">.</span><span class="nf">Project</span><span class="p">(</span><span class="n">Coords</span><span class="o">:</span> <span class="n">Vector3Array</span><span class="o">;</span> <span class="n">Rotation</span><span class="o">:</span> <span class="n">Vector3</span><span class="p">)</span><span class="o">:</span> <span class="n">TPointArray</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Projects the given coordinates <code class="docutils literal notranslate"><span class="pre">coords</span></code> and applys the given <code class="docutils literal notranslate"><span class="pre">Rotation</span></code> vector to the projection.</p>
+<p>Projects the given coordinates <code class="docutils literal notranslate"><span class="pre">coo</span> <span class="pre">rds</span></code> and applys the given <code class="docutils literal notranslate"><span class="pre">Rotation</span></code> vector to the projection.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="mm2ms-run">
@@ -318,11 +319,22 @@ MM2MS supports Resizable RS client, but SRL does not. This is added only for fut
 <hr class="docutils" />
 <div class="section" id="mm2ms-setzoom">
 <h3>MM2MS.SetZoom<a class="headerlink" href="#mm2ms-setzoom" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">TMinimapToMS</span><span class="o">.</span><span class="nf">SetZoom</span><span class="p">(</span><span class="n">Notch</span><span class="o">:</span> <span class="n">ERSZoomNotch</span><span class="p">)</span><span class="o">;</span>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">TMinimapToMS</span><span class="o">.</span><span class="nf">SetZoom</span><span class="p">(</span><span class="n">Notch</span><span class="o">:</span> <span class="n">ERSZoomNotch</span><span class="p">)</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Changes the zoom level MM2MS operates at.</p>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">MM2MS</span><span class="o">.</span><span class="n">SetZoom</span><span class="p">(</span><span class="n">Options</span><span class="o">.</span><span class="n">GetZoomNotch</span><span class="p">())</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h3>MM2MS.SetZoom<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">TMinimapToMS</span><span class="o">.</span><span class="nf">SetZoom</span><span class="o">;</span> <span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Sets up MM2MS for the current zoom level in game.</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">MM2MS</span><span class="o">.</span><span class="n">SetZoom</span><span class="p">()</span><span class="o">;</span>
 </pre></div>
 </div>
 </div>
@@ -387,8 +399,8 @@ The first method takes a vector3 array as input, so we can pass height as well, 
 <p><em>ROLL is the compass angle, by leaving it default it will gather the compass angle itself.</em></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id1">
-<h3>Minimap.VecToMsBox<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Minimap.VecToMsBox<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSMinimap</span><span class="o">.</span><span class="nf">PointToMsBox</span><span class="p">(</span><span class="n">PT</span><span class="o">:</span> <span class="n">TPoint</span><span class="o">;</span> <span class="n">Roll</span><span class="o">:</span><span class="kt">Single</span><span class="o">=</span><span class="mh">$FFFF</span><span class="p">)</span><span class="o">:</span> <span class="n">TBox</span><span class="o">;</span>
 </pre></div>
 </div>

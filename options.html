@@ -140,9 +140,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#options-setcurrenttab">Options.SetCurrentTab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-getbrightness">Options.GetBrightness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-setbrightness">Options.SetBrightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-erszoomnotch">type ERSZoomNotch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options-findzoomslider">Options.FindZoomSlider</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-getzoom">Options.GetZoom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-setzoom">Options.SetZoom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#type-erszoomnotch">type ERSZoomNotch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-getzoomnotch">Options.GetZoomNotch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-setzoomnotch">Options.SetZoomNotch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options-toggleacceptaid">Options.ToggleAcceptAid</a></li>
@@ -312,22 +313,6 @@ to get outdated.</p>
 <p>Sets the mainscreen brightness</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="options-getzoom">
-<h2>Options.GetZoom<a class="headerlink" href="#options-getzoom" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">GetZoom</span><span class="p">()</span><span class="o">:</span> <span class="n">Int32</span><span class="o">;</span>
-</pre></div>
-</div>
-<p>Returns the mainscreen zoom level 0..100.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="options-setzoom">
-<h2>Options.SetZoom<a class="headerlink" href="#options-setzoom" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">SetZoom</span><span class="p">(</span><span class="n">Level</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">;</span>
-</pre></div>
-</div>
-<p>Sets the mainscreen zoom level by scrolling, accurate to within 3 levels.</p>
-</div>
-<hr class="docutils" />
 <div class="section" id="type-erszoomnotch">
 <h2>type ERSZoomNotch<a class="headerlink" href="#type-erszoomnotch" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -336,6 +321,30 @@ to get outdated.</p>
 ZOOM_LEVEL_50 = Default.
 ZOOM_LEVEL_100 = Zoomed in fully.</p>
 </div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="options-findzoomslider">
+<h2>Options.FindZoomSlider<a class="headerlink" href="#options-findzoomslider" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">FindZoomSlider</span><span class="p">(</span><span class="n">out</span> <span class="n">P</span><span class="o">:</span> <span class="n">TPoint</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns the middle of the green zoom slider.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="options-getzoom">
+<h2>Options.GetZoom<a class="headerlink" href="#options-getzoom" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">GetZoom</span><span class="o">:</span> <span class="n">Int32</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns the current zoom level in 0..100 range. -1 if not found.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="options-setzoom">
+<h2>Options.SetZoom<a class="headerlink" href="#options-setzoom" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">SetZoom</span><span class="p">(</span><span class="n">Level</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Sets the current zoom level by using the slider. 0..100 range.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="options-getzoomnotch">
@@ -348,11 +357,10 @@ ZOOM_LEVEL_100 = Zoomed in fully.</p>
 <hr class="docutils" />
 <div class="section" id="options-setzoomnotch">
 <h2>Options.SetZoomNotch<a class="headerlink" href="#options-setzoomnotch" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">SetZoomNotch</span><span class="p">(</span><span class="n">Notch</span><span class="o">:</span> <span class="n">ERSZoomNotch</span><span class="o">;</span> <span class="n">Randomness</span><span class="o">:</span> <span class="n">Int32</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSOptions</span><span class="o">.</span><span class="nf">SetZoomNotch</span><span class="p">(</span><span class="n">Notch</span><span class="o">:</span> <span class="n">ERSZoomNotch</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Moves the zoom bar slider to the <cite>Notch</cite> position.
-<cite>Randomness</cite> is the random +- we add to the coord of the notch position.</p>
+<p>Moves the zoom slider to the <cite>Notch</cite> position.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="options-toggleacceptaid">
