@@ -91,7 +91,7 @@ Welcome to SRLs documentation!
    slackdebug
    slackab
    misc(utils)
-   slacktree
+   slacktree(utils)
 
 -----------
 
@@ -99,6 +99,13 @@ Welcome to SRLs documentation!
    :caption: UTILS -> SLACKTREE
 
    tree
+
+-----------
+
+.. toctree::
+   :caption: UTILS -> ASYNCMOUSE
+
+   libasyncmouse
 
 -----------
 
