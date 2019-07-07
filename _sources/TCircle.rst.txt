@@ -97,7 +97,7 @@ Extract all the points from `TestSet` that fits within this circle.
 ------------
 
 TCircle.Expand
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 .. code-block:: pascal
 
     function TCircle.Expand(Inc: Int32): TCircle; constref;

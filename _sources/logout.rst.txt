@@ -71,6 +71,17 @@ Jumps to the given world.
 
 ------------
 
+Logout.WorldSwitcher.GetCurrentWorld
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSLogoutWS.GetCurrentWorld: Int32;
+
+Reads and returns the current world.
+
+
+------------
+
 Logout.WorldSwitcher.isOpen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
@@ -104,24 +115,24 @@ Closes the worldswitcher (returns back to the logout button)
 
 ------------
 
-Logout.WorldSwitcher.VisibleWorlds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Logout.WorldSwitcher.ClickWorld
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-  function TRSLogoutWS.VisibleWorlds(out Worlds: TIntegerArray; out Boxes: TBoxArray): Boolean;
+ function TRSLogoutWS.ClickWorld(World, WorldColor: Int32): Boolean;
 
-Returns the VisibleWorlds and their bounds
+Attempts to click a world [Using a simple bitmap search].
 
 
 ------------
 
-Logout.WorldSwitcher.CurrentWorld
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Logout.WorldSwitcher.Scroll
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-  function TRSLogoutWS.CurrentWorld: Integer;
+ function TRSLogoutWS.Scroll(Down: Boolean): Boolean;
 
-Returns the world we are currently in
+    Returns true if world-switcher was scrolled [By checking for pixelshift].
 
 
 ------------
@@ -130,9 +141,18 @@ Logout.WorldSwitcher.SwitchTo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-  function TRSLogoutWS.SwitchTo(World: Integer): Boolean;
+ function TRSLogoutWS.SwitchTo(World: Int32): Boolean;
 
-Hops to the given world
+Uses the in-game world switcher to switch to `World`. Returns true if succesfully
+switched [By reading current world].
+
+**Example**
+
+.. code-block:: pascal
+
+
+  if Logout.WorldSwitcher.SwitchTo(302) then
+    WriteLn('Switched to world 302');
 
 
 ------------
