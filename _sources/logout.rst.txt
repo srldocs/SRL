@@ -86,9 +86,11 @@ Logout.WorldSwitcher.isOpen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: pascal
 
-  function TRSLogoutWS.isOpen(WaitTime: Integer = 0): Boolean;
+  function TRSLogoutWS.isOpen: Boolean;
+  function TRSLogoutWS.IsOpen(WaitTime: Int32): Boolean; overload;
 
-Returns if the in-game worldswitcher is open
+Returns if the in-game worldswitcher is open. Optional overload to wait
+up to `WaitTime` for worldswitcher to be open.
 
 
 ------------
