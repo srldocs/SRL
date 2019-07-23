@@ -140,6 +140,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinscreen.html">PinScreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="grandexch.html">GrandExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shops.html">Shop Interface</a></li>
@@ -166,7 +167,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#bankscreen-withdraw">BankScreen.Withdraw</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#pinscreen">PinScreen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smithingscreen.html">Smithing screen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gametabs.html">Gametabs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rsInterfaceBase.html">RSInterfaceBase</a></li>
@@ -436,20 +436,8 @@ Alias <cite>IsSlotUsed</cite> exists for naming compatiblity with Inventory.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">by slacky</p>
 </div>
-</div>
-</div>
 <hr class="docutils" />
-<div class="section" id="pinscreen">
-<h1>PinScreen<a class="headerlink" href="#pinscreen" title="Permalink to this headline">¶</a></h1>
-<p>This file also stores all methods that are used in the pinscreen-iterface.</p>
-<p>Technically, I think you can call <cite>PinScreen.EnterPin</cite> to determine if the
-bankscreen interface is open, by doing so it would enter the pin if there is one.</p>
-<p>I think at some point this should probably be handled automatically by bankscreen
-looking at the code this will be a bit troublesome now? - slacky</p>
-<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="p">(</span><span class="n">PinScreen</span><span class="o">.</span><span class="n">EnterPin</span><span class="p">())</span><span class="o">;</span> <span class="c1">// returns True if we got to the bank</span>
-</pre></div>
 </div>
-<hr class="docutils" />
 </div>
 
 

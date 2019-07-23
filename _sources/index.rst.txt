@@ -74,6 +74,7 @@ Welcome to SRLs documentation!
 
    mainscreen
    minimap
+   pinscreen
    grandexch
    depositbox
    shops
